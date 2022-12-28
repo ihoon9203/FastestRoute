@@ -46,6 +46,9 @@ struct Area4: Codable {
 struct Land: Codable {
 	var name: String?
 	
+	var number1: String?
+	var number2: String?
+	
 	var addition0: Addition0?
 	var addition1: Addition1?
 	var addition2: Addition2?

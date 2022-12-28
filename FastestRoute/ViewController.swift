@@ -36,10 +36,12 @@ extension ViewController: NMFMapViewTouchDelegate {
 	func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
 		let latlngString = String(latlng.lng) + "," + String(latlng.lat)
 		markerProvider.selectedGPSLonLat = latlngString
-		markerProvider.getHumanLocation()
+		markerProvider.getHumanLocation(nil)
 	}
 	func mapView(_ mapView: NMFMapView, didTap symbol: NMFSymbol) -> Bool {
-		print(symbol)
+		let latlngString = String(symbol.position.lng) + "," + String(symbol.position.lat)
+		markerProvider.selectedGPSLonLat = latlngString
+		markerProvider.getHumanLocation(symbol.caption)
 		return true
 	}
 }

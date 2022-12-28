@@ -16,7 +16,7 @@ class MarkerProvider {
 	
 	weak var markerAddressDelegate: MarkerAddressDataCommunicationProtocol?
 	
-	func getHumanLocation() {
+	func getHumanLocation(_ symbol: String?) {
 		var urlComponents = URLComponents(string: Constants.reverseGeocoderAddress)!
 
 		urlComponents.queryItems = [
@@ -38,6 +38,9 @@ class MarkerProvider {
 				var area3: String?
 				var area4: String?
 				var area5: String?
+				
+				var num1: String?
+				var num2: String?
 				
 				for result in marker.results {
 //					let a0 = result.region.area0
@@ -65,6 +68,12 @@ class MarkerProvider {
 						if a5.name != "" {
 							area5 = a5.name
 						}
+						if let numb1 = a5.number1 {
+							num1 = numb1
+						}
+						if let numb2 = a5.number2 {
+							num2 = numb2
+						}
 					}
 				}
 //				if area0 != nil {
@@ -85,7 +94,16 @@ class MarkerProvider {
 				if area5 != nil {
 					area += area5! + " "
 				}
+				if !(num1 == nil || num1 == "") {
+					area += num1!
+				}
+				if !(num2 == nil || num2 == "") {
+					area += "-\(num2!)"
+				}
 				area = area.trimmingCharacters(in: .whitespaces)
+				if symbol != nil {
+					area += " \(symbol!)"
+				}
 				self.markerAddressDelegate?.notifyMarkerAddressDataProvided(area)
 				
 			} onFailure: { error in
