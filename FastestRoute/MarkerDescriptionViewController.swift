@@ -9,7 +9,8 @@ import UIKit
 
 class MarkerDescriptionViewController: UIViewController {
 
-    override func viewDidLoad() {
+	@IBOutlet weak var sheetContainer: UIView!
+	override func viewDidLoad() {
         super.viewDidLoad()
 //		loadViewFromNib()
 //		if let nib = Bundle.main.loadNibNamed("MarkerDescriptionView", owner: self),

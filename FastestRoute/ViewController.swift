@@ -30,6 +30,7 @@ class ViewController: UIViewController {
 		naverMapView.showCompass = true
 		fullView.addSubview(naverMapView)
 		
+		
 		// Do any additional setup after loading the view.
 	}
 }
@@ -57,7 +58,7 @@ extension ViewController: MarkerAddressDataCommunicationProtocol {
 				marker.mapView = nil
 				let newView = MarkerDescriptionViewController()
 				if let sheet = newView.sheetPresentationController {
-						sheet.detents = [.medium()]
+					sheet.detents = [.medium()]
 						sheet.largestUndimmedDetentIdentifier = .medium
 						sheet.prefersScrollingExpandsWhenScrolledToEdge = false
 						sheet.prefersEdgeAttachedInCompactHeight = true

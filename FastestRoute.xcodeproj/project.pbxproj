@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A197CBD295C235200118596 /* MarkerDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A197CBC295C235100118596 /* MarkerDescriptionViewController.swift */; };
 		7A197CBF295C239E00118596 /* MarkerDescriptionVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A197CBE295C239E00118596 /* MarkerDescriptionVCDelegate.swift */; };
+		7A2DE16A295EFE1100584240 /* MarkerDescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2DE169295EFE1100584240 /* MarkerDescriptionViewController.xib */; };
 		7A5D4527295B08AC00225435 /* CLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D4526295B08AC00225435 /* CLManager.swift */; };
 		7ABB2AC429580EC500A06EEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB2AC329580EC500A06EEF /* AppDelegate.swift */; };
 		7ABB2AC629580EC500A06EEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB2AC529580EC500A06EEF /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 		6AEB315EEBC7C0745C1F0EBA /* Pods-FastestRoute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastestRoute.release.xcconfig"; path = "Target Support Files/Pods-FastestRoute/Pods-FastestRoute.release.xcconfig"; sourceTree = "<group>"; };
 		7A197CBC295C235100118596 /* MarkerDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDescriptionViewController.swift; sourceTree = "<group>"; };
 		7A197CBE295C239E00118596 /* MarkerDescriptionVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDescriptionVCDelegate.swift; sourceTree = "<group>"; };
+		7A2DE169295EFE1100584240 /* MarkerDescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerDescriptionViewController.xib; sourceTree = "<group>"; };
 		7A5D4526295B08AC00225435 /* CLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLManager.swift; sourceTree = "<group>"; };
 		7ABB2AC029580EC500A06EEF /* FastestRoute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastestRoute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABB2AC329580EC500A06EEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				7ADEE618295B33EC00FB5AAA /* MarkerAddress.swift */,
 				7ADEE61A295B45D800FB5AAA /* MarkerAddressDataCommunicationProtocol.swift */,
 				7A197CBE295C239E00118596 /* MarkerDescriptionVCDelegate.swift */,
+				7A2DE169295EFE1100584240 /* MarkerDescriptionViewController.xib */,
 			);
 			path = FastestRoute;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ABB2AD329580EC500A06EEF /* LaunchScreen.storyboard in Resources */,
+				7A2DE16A295EFE1100584240 /* MarkerDescriptionViewController.xib in Resources */,
 				7ABB2AD029580EC500A06EEF /* Assets.xcassets in Resources */,
 				7ABB2ACB29580EC500A06EEF /* Main.storyboard in Resources */,
 			);
