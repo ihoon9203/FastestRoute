@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import NMapsMap
 
 protocol MarkerAddressDataCommunicationProtocol: NSObject {
-	func notifyMarkerAddressDataProvided(_ markerAddress: String)
+	func notifyMarkerAddressDataProvided(_ markerAddress: String, _ marker: NMFMarker)
 }

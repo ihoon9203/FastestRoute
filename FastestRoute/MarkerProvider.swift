@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import NMapsMap
+import Dispatch
 
 class MarkerProvider {
 	let rgParser = ReverseGeocodeParser()
 	
-	var marker = [Marker]()
+	var markerList = Dictionary<String, NMFMarker>()
 	var selectedGPSLonLat = ""
 	var selectedAreaAddress: MarkerAddress?
 	
@@ -104,7 +106,13 @@ class MarkerProvider {
 				if symbol != nil {
 					area += " \(symbol!)"
 				}
-				self.markerAddressDelegate?.notifyMarkerAddressDataProvided(area)
+				let latlng = self.selectedGPSLonLat.split(separator: ",")
+				let lng = Double(latlng[0])
+				let lat = Double(latlng[1])
+				let marker = NMFMarker(position: NMGLatLng(lat: lat ?? 0, lng: lng ?? 0))
+				self.markerList[area] = marker
+				
+				self.markerAddressDelegate?.notifyMarkerAddressDataProvided(area, marker)
 				
 			} onFailure: { error in
 				print(error)

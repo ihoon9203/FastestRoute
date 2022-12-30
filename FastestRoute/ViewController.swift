@@ -8,25 +8,27 @@
 import UIKit
 import CoreLocation
 import NMapsMap
+import Dispatch
 
 class ViewController: UIViewController {
 
 	@IBOutlet var fullView: UIView!
 	let markerProvider = MarkerProvider()
+	var naverMapView: NMFNaverMapView!
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		markerProvider.markerAddressDelegate = self
-		let mapView = NMFNaverMapView(frame: fullView.frame)
-		mapView.mapView.touchDelegate = self
-		mapView.mapView.mapType = .basic
-		mapView.showLocationButton = true
-		mapView.mapView.positionMode = .normal
-		mapView.showCompass = true
+		naverMapView = NMFNaverMapView(frame: fullView.frame)
+		naverMapView.mapView.touchDelegate = self
+		naverMapView.mapView.mapType = .basic
+		naverMapView.showLocationButton = true
+		naverMapView.mapView.positionMode = .normal
+		naverMapView.showCompass = true
 		if let currentPositionCoord = CLManager.sharedLocationManager.location?.coordinate {
-			mapView.mapView.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(lat: currentPositionCoord.latitude, lng: currentPositionCoord.longitude)))
+			naverMapView.mapView.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(lat: currentPositionCoord.latitude, lng: currentPositionCoord.longitude)))
 		}
-		mapView.showCompass = true
-		fullView.addSubview(mapView)
+		naverMapView.showCompass = true
+		fullView.addSubview(naverMapView)
 		
 		// Do any additional setup after loading the view.
 	}
@@ -46,7 +48,24 @@ extension ViewController: NMFMapViewTouchDelegate {
 	}
 }
 extension ViewController: MarkerAddressDataCommunicationProtocol {
-	func notifyMarkerAddressDataProvided(_ markerAddress: String) {
+	func notifyMarkerAddressDataProvided(_ markerAddress: String, _ marker: NMFMarker) {
 		print(markerAddress)
+		DispatchQueue.main.async {
+			marker.mapView = self.naverMapView.mapView
+			marker.touchHandler = { (overlay) in
+				print(overlay)
+				marker.mapView = nil
+				let newView = MarkerDescriptionViewController()
+				if let sheet = newView.sheetPresentationController {
+						sheet.detents = [.medium()]
+						sheet.largestUndimmedDetentIdentifier = .medium
+						sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+						sheet.prefersEdgeAttachedInCompactHeight = true
+						sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+					}
+				self.present(newView, animated: true, completion: nil)
+				return true
+			}
+		}
 	}
 }
