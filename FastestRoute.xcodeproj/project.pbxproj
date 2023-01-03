@@ -35,6 +35,7 @@
 		7A197CBC295C235100118596 /* MarkerDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDescriptionViewController.swift; sourceTree = "<group>"; };
 		7A197CBE295C239E00118596 /* MarkerDescriptionVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDescriptionVCDelegate.swift; sourceTree = "<group>"; };
 		7A2DE169295EFE1100584240 /* MarkerDescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerDescriptionViewController.xib; sourceTree = "<group>"; };
+		7A5200E52963FB11008720FE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7A5D4526295B08AC00225435 /* CLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLManager.swift; sourceTree = "<group>"; };
 		7AA261342961805F004B5D98 /* MarkerListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerListManager.swift; sourceTree = "<group>"; };
 		7ABB2AC029580EC500A06EEF /* FastestRoute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastestRoute.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +142,7 @@
 		7ABB2AB729580EC500A06EEF = {
 			isa = PBXGroup;
 			children = (
+				7A5200E52963FB11008720FE /* README.md */,
 				7ABB2AC229580EC500A06EEF /* FastestRoute */,
 				7ABB2AC129580EC500A06EEF /* Products */,
 				4CE2F42E0D3313D3685950E7 /* Pods */,
