@@ -12,6 +12,6 @@ protocol MarkerDescriptionVCDelegate: NSObject {
 }
 
 protocol MarkerDescriptionViewDelegate: NSObject {
-	func notifyDeleteButtonTapped()
-	func notifyExitButtonTapped()
+	func notifyDeleteButtonTapped(_ markerID: String)
+	func notifyAddButtonTapped(_ markerID: String, markerLabel: String)
 }

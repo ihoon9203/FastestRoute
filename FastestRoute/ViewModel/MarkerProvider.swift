@@ -11,8 +11,6 @@ import Dispatch
 
 class MarkerProvider {
 	let rgParser = ReverseGeocodeParser()
-	
-	var markerList = Dictionary<String, NMFMarker>()
 	var selectedGPSLonLat = ""
 	var selectedAreaAddress: MarkerAddress?
 	
@@ -110,9 +108,8 @@ class MarkerProvider {
 				let lng = Double(latlng[0])
 				let lat = Double(latlng[1])
 				let marker = NMFMarker(position: NMGLatLng(lat: lat ?? 0, lng: lng ?? 0))
-				self.markerList[area] = marker
 				
-				self.markerAddressDelegate?.notifyMarkerAddressDataProvided(area, marker)
+				self.markerAddressDelegate?.notifyMarkerAddressDataProvided(area, self.selectedGPSLonLat, marker)
 				
 			} onFailure: { error in
 				print(error)

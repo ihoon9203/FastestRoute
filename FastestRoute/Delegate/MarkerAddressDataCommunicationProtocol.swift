@@ -9,5 +9,5 @@ import Foundation
 import NMapsMap
 
 protocol MarkerAddressDataCommunicationProtocol: NSObject {
-	func notifyMarkerAddressDataProvided(_ markerAddress: String, _ marker: NMFMarker)
+	func notifyMarkerAddressDataProvided(_ markerAddress: String, _ latlng: String, _ marker: NMFMarker)
 }

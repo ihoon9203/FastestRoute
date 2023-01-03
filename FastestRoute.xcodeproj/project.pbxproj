@@ -11,9 +11,10 @@
 		7A197CBF295C239E00118596 /* MarkerDescriptionVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A197CBE295C239E00118596 /* MarkerDescriptionVCDelegate.swift */; };
 		7A2DE16A295EFE1100584240 /* MarkerDescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2DE169295EFE1100584240 /* MarkerDescriptionViewController.xib */; };
 		7A5D4527295B08AC00225435 /* CLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D4526295B08AC00225435 /* CLManager.swift */; };
+		7AA261352961805F004B5D98 /* MarkerListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA261342961805F004B5D98 /* MarkerListManager.swift */; };
 		7ABB2AC429580EC500A06EEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB2AC329580EC500A06EEF /* AppDelegate.swift */; };
 		7ABB2AC629580EC500A06EEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB2AC529580EC500A06EEF /* SceneDelegate.swift */; };
-		7ABB2AC829580EC500A06EEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB2AC729580EC500A06EEF /* ViewController.swift */; };
+		7ABB2AC829580EC500A06EEF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB2AC729580EC500A06EEF /* MapViewController.swift */; };
 		7ABB2ACB29580EC500A06EEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB2AC929580EC500A06EEF /* Main.storyboard */; };
 		7ABB2ACE29580EC500A06EEF /* FastestRoute.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB2ACC29580EC500A06EEF /* FastestRoute.xcdatamodeld */; };
 		7ABB2AD029580EC500A06EEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB2ACF29580EC500A06EEF /* Assets.xcassets */; };
@@ -35,10 +36,11 @@
 		7A197CBE295C239E00118596 /* MarkerDescriptionVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDescriptionVCDelegate.swift; sourceTree = "<group>"; };
 		7A2DE169295EFE1100584240 /* MarkerDescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerDescriptionViewController.xib; sourceTree = "<group>"; };
 		7A5D4526295B08AC00225435 /* CLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLManager.swift; sourceTree = "<group>"; };
+		7AA261342961805F004B5D98 /* MarkerListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerListManager.swift; sourceTree = "<group>"; };
 		7ABB2AC029580EC500A06EEF /* FastestRoute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastestRoute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABB2AC329580EC500A06EEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ABB2AC529580EC500A06EEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7ABB2AC729580EC500A06EEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7ABB2AC729580EC500A06EEF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7ABB2ACA29580EC500A06EEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7ABB2ACD29580EC500A06EEF /* FastestRoute.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FastestRoute.xcdatamodel; sourceTree = "<group>"; };
 		7ABB2ACF29580EC500A06EEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +75,69 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7A5200DE2963F901008720FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A197CBC295C235100118596 /* MarkerDescriptionViewController.swift */,
+				7ABB2AC729580EC500A06EEF /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7A5200DF2963F978008720FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7ABB2AE22958440F00A06EEF /* Marker.swift */,
+				7ADEE618295B33EC00FB5AAA /* MarkerAddress.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A5200E02963F990008720FE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7ABB2ADE2958431300A06EEF /* MarkerProvider.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7A5200E12963F9E2008720FE /* DataParser */ = {
+			isa = PBXGroup;
+			children = (
+				7ABB2AE0295843CB00A06EEF /* ReverseGeocodeParser.swift */,
+			);
+			path = DataParser;
+			sourceTree = "<group>";
+		};
+		7A5200E22963F9F1008720FE /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				7A197CBE295C239E00118596 /* MarkerDescriptionVCDelegate.swift */,
+				7ADEE61A295B45D800FB5AAA /* MarkerAddressDataCommunicationProtocol.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		7A5200E32963FA0C008720FE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7ABB2ADC295840C700A06EEF /* Constants.swift */,
+				7A5D4526295B08AC00225435 /* CLManager.swift */,
+				7AA261342961805F004B5D98 /* MarkerListManager.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7A5200E42963FA1E008720FE /* Nib */ = {
+			isa = PBXGroup;
+			children = (
+				7ABB2AC929580EC500A06EEF /* Main.storyboard */,
+				7ABB2AD129580EC500A06EEF /* LaunchScreen.storyboard */,
+				7A2DE169295EFE1100584240 /* MarkerDescriptionViewController.xib */,
+			);
+			path = Nib;
+			sourceTree = "<group>";
+		};
 		7ABB2AB729580EC500A06EEF = {
 			isa = PBXGroup;
 			children = (
@@ -94,24 +159,18 @@
 		7ABB2AC229580EC500A06EEF /* FastestRoute */ = {
 			isa = PBXGroup;
 			children = (
+				7A5200E42963FA1E008720FE /* Nib */,
+				7A5200E32963FA0C008720FE /* Utility */,
+				7A5200E22963F9F1008720FE /* Delegate */,
+				7A5200E12963F9E2008720FE /* DataParser */,
+				7A5200E02963F990008720FE /* ViewModel */,
+				7A5200DF2963F978008720FE /* Model */,
+				7A5200DE2963F901008720FE /* View */,
 				7ABB2AC329580EC500A06EEF /* AppDelegate.swift */,
 				7ABB2AC529580EC500A06EEF /* SceneDelegate.swift */,
-				7ABB2AC729580EC500A06EEF /* ViewController.swift */,
-				7A197CBC295C235100118596 /* MarkerDescriptionViewController.swift */,
-				7ABB2AC929580EC500A06EEF /* Main.storyboard */,
 				7ABB2ACF29580EC500A06EEF /* Assets.xcassets */,
-				7ABB2AD129580EC500A06EEF /* LaunchScreen.storyboard */,
 				7ABB2AD429580EC500A06EEF /* Info.plist */,
 				7ABB2ACC29580EC500A06EEF /* FastestRoute.xcdatamodeld */,
-				7ABB2ADC295840C700A06EEF /* Constants.swift */,
-				7ABB2ADE2958431300A06EEF /* MarkerProvider.swift */,
-				7ABB2AE0295843CB00A06EEF /* ReverseGeocodeParser.swift */,
-				7ABB2AE22958440F00A06EEF /* Marker.swift */,
-				7A5D4526295B08AC00225435 /* CLManager.swift */,
-				7ADEE618295B33EC00FB5AAA /* MarkerAddress.swift */,
-				7ADEE61A295B45D800FB5AAA /* MarkerAddressDataCommunicationProtocol.swift */,
-				7A197CBE295C239E00118596 /* MarkerDescriptionVCDelegate.swift */,
-				7A2DE169295EFE1100584240 /* MarkerDescriptionViewController.xib */,
 			);
 			path = FastestRoute;
 			sourceTree = "<group>";
@@ -241,7 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ABB2ADF2958431300A06EEF /* MarkerProvider.swift in Sources */,
-				7ABB2AC829580EC500A06EEF /* ViewController.swift in Sources */,
+				7ABB2AC829580EC500A06EEF /* MapViewController.swift in Sources */,
 				7ABB2AC429580EC500A06EEF /* AppDelegate.swift in Sources */,
 				7ABB2ACE29580EC500A06EEF /* FastestRoute.xcdatamodeld in Sources */,
 				7ADEE619295B33EC00FB5AAA /* MarkerAddress.swift in Sources */,
@@ -253,6 +312,7 @@
 				7A197CBD295C235200118596 /* MarkerDescriptionViewController.swift in Sources */,
 				7ABB2AE32958440F00A06EEF /* Marker.swift in Sources */,
 				7ADEE61B295B45D800FB5AAA /* MarkerAddressDataCommunicationProtocol.swift in Sources */,
+				7AA261352961805F004B5D98 /* MarkerListManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
